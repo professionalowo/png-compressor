@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply bg-slate-800 text-slate-100;
+}
+
+input[type="file"] {
+  @apply p-1 bg-slate-700 rounded-md;
+}
+input[type="file"]::file-selector-button {
+  @apply bg-blue-600 text-slate-100 px-1 py-2 rounded-md border-none hover:bg-blue-700;
+}
