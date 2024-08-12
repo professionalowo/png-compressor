@@ -1,16 +1,17 @@
-import { CompressForm } from "./components/CompressForm";
 import { Router } from "./components/router/Router";
+import { AboutScreen } from "./Routes/AboutScreen";
+import { CompressScreen } from "./Routes/CompressScreen";
+import { Layout } from "./Routes/Layout";
 
 export function App() {
-  return <Root />;
+  return (
+    <Router
+      layout={<Layout />}
+      routes={[
+        Router.Route({ path: "/", element: <CompressScreen /> }),
+        Router.Route({ path: "/about", element: <AboutScreen /> }),
+      ]}
+      notFound={<p>Not found</p>}
+    />
+  );
 }
-
-const Root = () => (
-  <Router
-    routes={[
-      Router.Route({ path: "/", element: <CompressForm /> }),
-      Router.Route({ path: "/about", element: <p>About</p> }),
-    ]}
-    notFound={<p>Not found</p>}
-  />
-);
