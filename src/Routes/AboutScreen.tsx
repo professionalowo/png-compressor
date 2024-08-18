@@ -1,3 +1,5 @@
+import ReactMarkdown from "react-markdown";
+import markdown from "../markdown/about.md";
 export function AboutScreen() {
-  return <p>About</p>;
+  return <ReactMarkdown children={markdown} skipHtml />;
 }
